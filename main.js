@@ -70,6 +70,9 @@ const navSlide = () => {
 
   nav.classList.toggle("nav-active");
 
+  const isExpanded = burger.getAttribute("aria-expanded") === "true";
+  burger.setAttribute("aria-expanded", String(!isExpanded));
+
   navLinks.forEach((link, index) => {
     if (window.innerWidth < 768) {
       if (link.style.animation) {
@@ -85,25 +88,20 @@ const navSlide = () => {
 };
 
 const createEventListeners = () => {
-  if (window.addEventListener) {
-    burger.addEventListener("click", navSlide, false);
-  } else if (window.attachEvent) {
-    burger.attachEvent("click", navSlide);
-  }
+  burger.addEventListener("click", navSlide);
 
-  if (window.addEventListener) {
-    nav.addEventListener("click", navSlide, false);
-  } else if (window.attachEvent) {
-    nav.attachEvent("click", navSlide);
-  }
+  // Close mobile nav when a nav link is tapped
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 768 && nav.classList.contains("nav-active")) {
+        navSlide();
+      }
+    });
+  });
 };
 
 const setupPage = () => {
   createEventListeners();
 };
 
-if (window.addEventListener) {
-  window.addEventListener("load", setupPage, false);
-} else if (window.attachEvent) {
-  window.attachEvent("load", setupPage);
-}
+window.addEventListener("load", setupPage);

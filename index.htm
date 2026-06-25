@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="South Africa's trusted industrial and commercial water pipe specialists. Expert supply, installation, and maintenance services that keep your operations flowing. Fast response. Proven results."
@@ -26,6 +26,7 @@
     <title>Gulamu Business Enterprise</title>
   </head>
   <body>
+    <a class="skip-link" href="#about">Skip to main content</a>
     <!-- NAV -->
     <section class="nav-wrapper">
       <div class="logo">
@@ -50,7 +51,7 @@
           </picture>
         </a>
       </div>
-      <nav>
+      <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
@@ -58,11 +59,11 @@
           <li><a href="#process">Process</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="burger">
+        <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
-        </div>
+        </button>
         <a class="cta" href="#contact">Request a quote</a>
       </nav>
     </section>
@@ -80,6 +81,7 @@
             water pipe systems across South Africa. No shortcuts. No callbacks.
             Just reliable infrastructure built to last.
           </p>
+          <a class="cta" href="#contact">Request a quote</a>
         </div>
       </div>
       <div class="header-img">
@@ -106,28 +108,28 @@
           />
         </picture>
       </div>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-num counter" data-target="500">0</div>
-          <div class="stat-label">Systems Installed</div>
-        </div>
-        <div class="divider"></div>
-        <div class="stat">
-          <div class="stat-num counter" data-target="3">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="divider"></div>
-        <div class="stat">
-          <div class="stat-num counter" data-target="60">0</div>
-          <div class="stat-label">Clients Served</div>
-        </div>
-        <div class="divider"></div>
-        <div class="stat">
-          <div class="stat-num counter" data-target="5">0</div>
-          <div class="stat-label">Provinces Active</div>
-        </div>
-      </div>
     </header>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num counter" data-target="500">0</div>
+        <div class="stat-label">Systems Installed</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="stat-num counter" data-target="3">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="stat-num counter" data-target="60">0</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="stat-num counter" data-target="5">0</div>
+        <div class="stat-label">Provinces Active</div>
+      </div>
+    </div>
     <!-- ABOUT US -->
     <section id="about" class="about-us pre-pad">
       <article class="about">
@@ -245,7 +247,7 @@
           systems operating efficiently and reliably at all times.
         </p>
       </article>
-      <artcle class="mission"
+      <article class="mission"
         ><h2>Our Values</h2>
         <h4>Quality Work Without Compromise</h4>
         <p>
@@ -255,7 +257,7 @@
           first assessment to final execution, we ensure the job is done
           properly and professionally.
         </p>
-      </artcle>
+      </article>
     </section>
     <!-- PAIN POINT -->
     <section class="pain pre-pad">
@@ -660,12 +662,12 @@
           <li>Fast response for urgent pump issues</li>
           <li>Experienced technicians you can trust</li>
           <li>Service available across South Africa</li>
-          <li>Reliable installation, repair & maintenance</li>
-          <a class="cta" href="#contact">Request a quote</a>
-          <p class="no-oblig fade-in-bottom">
-            No obligation. No pressure. Just expert advice.
-          </p>
+          <li>Reliable installation, repair &amp; maintenance</li>
         </ul>
+        <a class="cta" href="#contact">Request a quote</a>
+        <p class="no-oblig fade-in-bottom">
+          No obligation. No pressure. Just expert advice.
+        </p>
       </div>
     </section>
     <!-- GALLERY -->
@@ -812,7 +814,7 @@
                 type="image/webp"
               />
               <img
-                src="img/img17"
+                src="img/IMG17.jpg"
                 alt="A picture of industrial water pumps"
                 loading="lazy"
               />
@@ -881,27 +883,28 @@
         <div class="contact-contacts fade-in-right">
           <div class="contact-email contact-li">
             <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:info@gulamu">info@gulamu.co.za</a>
+            <a href="mailto:info@gulamu.co.za">info@gulamu.co.za</a>
           </div>
           <div class="contact-phone contact-li">
             <i class="fa-solid fa-phone"></i>
-            <a href="tel:+27784147805">0784141805</a>
+            <a href="tel:+27784141805">0784141805</a>
           </div>
         </div>
       </div>
       <form action="formhandler.php" method="post">
         <label for="name">Name</label>
-        <input required type="text" name="name" placeholder="Name Surname" />
+        <input required type="text" name="name" id="name" autocomplete="name" placeholder="Name Surname" />
         <label for="email">Email</label>
         <input
           required
           type="email"
           name="email"
-          id=""
+          id="email"
+          autocomplete="email"
           placeholder="user@email.com"
         />
         <label for="subject">Subject</label>
-        <select name="subject" id="">
+        <select name="subject" id="subject" autocomplete="off">
           <option value="">Select a service...</option>
           <option value="supply">Pipe Supply</option>
           <option value="installation">Pipe Installation</option>
@@ -913,22 +916,37 @@
         <textarea
           required
           name="message"
-          id=""
+          id="message"
           placeholder="Write message here..."
         ></textarea>
         <input type="submit" value="Submit" class="submit-btn cta" />
       </form>
     </section>
     <!-- FOOTER -->
-    <footer class="pre-pad">
-      <div class="footer-wrapper width-sz">
-        <div class="footer-wrapper-text">
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <p class="footer-name">Gulamu<br />Business Enterprise</p>
+          <p class="footer-tagline">South Africa's water pipe specialist. Supply, installation, and maintenance of industrial pipe systems built to last.</p>
+          <a class="cta" href="#contact">Request a quote</a>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4 class="footer-col-title">Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why us</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4 class="footer-col-title">Contact</h4>
           <address>
-            <h4>Contact us</h4>
             Stand no. 76C<br />
             Arumberg, Badplaas<br />
             Mpumalanga, 1192<br />
-            0784141805<br />
+            <a href="tel:+27784141805">078 414 1805</a><br />
             <script>
               document.write(
                 '<a href="mailto:' +
@@ -951,29 +969,27 @@
               );
             </script>
           </address>
-          <div class="footer-wrapper-socials">
-            <h4>Socials</h4>
-            <a href="https://www.facebook.com" target="_blank"
+          <div class="footer-socials">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"
               ><i class="fa-brands fa-facebook"></i
             ></a>
             <a
               href="https://api.whatsapp.com/send?phone=+27784141805&text=Hello"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with us on WhatsApp"
               ><i class="fa-brands fa-whatsapp"></i
             ></a>
           </div>
         </div>
       </div>
-      <p class="text-small">
-        Gulamu Business Enterprise. All rights reserved. © Copyright
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        <noscript>2025</noscript>. Website developed by
-        <a class="link" href="https://www.qmateza.co.za" target="_blank"
-          >Q Mateza</a
-        >.
-      </p>
+      <div class="footer-bottom">
+        <p class="text-small">Gulamu Business Enterprise &copy; Copyright
+          <script>document.write(new Date().getFullYear());</script><noscript>2025</noscript>. All rights reserved.</p>
+        <p class="text-small">Website by
+          <a class="footer-credit" href="https://www.qmateza.co.za" target="_blank" rel="noopener noreferrer">Q Mateza</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>
